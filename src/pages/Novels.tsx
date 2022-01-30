@@ -34,8 +34,6 @@ export default function Novels() {
           </Styles.GenresContainer>
         </Styles.SearchContainer>
 
-        {/* <Styles.Line /> */}
-
         <Styles.NovelsContainer>
           <NovelItem />
           <NovelItem />

@@ -8,8 +8,8 @@ export const Container = styled.header`
   z-index: 2;
   top: 0;
   right: 0;
-  backdrop-filter: blur(0.7rem) brightness(0.8);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.7rem) brightness(0.7);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
 `;
 
 export const Wrapper = styled.div`
@@ -29,17 +29,42 @@ export const Logo = styled.div`
 
 export const Nav = styled.nav`
   display: flex;
+  height: 100%;
   align-items: center;
   gap: 3rem;
 `;
 
 export const NavLinksContainer = styled.div`
   display: flex;
+  align-items: center;
+  height: 100%;
   gap: 4rem;
 
   & a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
     font-size: 1.8rem;
     color: white;
+    transition: color .2s;
+
+    &:hover {
+      color: var(--gray-300);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 0.5rem;
+      border-radius: 10rem 10rem 0 0;
+      background-color: var(--gray-900);
+    }
   }
 `;
 
