@@ -2,8 +2,27 @@ import * as Styles from '../styles/NovelsStyles';
 
 import { SearchOutline } from 'react-ionicons';
 import { NovelItem } from '../components/NovelItem';
+import { useEffect, useState } from 'react';
+import { api } from '../services/api';
+
+type NovelData = {
+  id: number;
+  name: string;
+  volume: number;
+  author: string;
+  cover: string;
+  sinopse: string;
+  genres: string[];
+  stars: number;
+};
 
 export default function Novels() {
+  const [novelsList, setNovelsList] = useState<NovelData[]>([]);
+
+  useEffect(() => {
+    api.get('/api.json').then((response) => setNovelsList(response.data));
+  }, []);
+
   return (
     <Styles.Container>
       <Styles.Wrapper>
@@ -35,25 +54,11 @@ export default function Novels() {
         </Styles.SearchContainer>
 
         <Styles.NovelsContainer>
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
+          
+          {novelsList.map((novelData) => (
+            <NovelItem cover={novelData.cover} stars={novelData.stars} key={novelData.id} />
+          ))}
+
         </Styles.NovelsContainer>
 
       </Styles.Wrapper>

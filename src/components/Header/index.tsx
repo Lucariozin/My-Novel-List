@@ -1,20 +1,24 @@
 import * as Styles from './styles';
 
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
+import { NavLink } from '../NavLink';
 import { SearchOutline } from 'react-ionicons';
 
 export function Header() {
+  const { pathname } = useLocation();
+
   return (
     <Styles.Container>
       <Styles.Wrapper>
-        <Styles.Logo>MyNovelList</Styles.Logo>
+        <Styles.Logo>MyNovelsList</Styles.Logo>
 
         <Styles.Nav>
 
           <Styles.NavLinksContainer>
-            <Link to="/">Home</Link>
-            <Link to="/novels">Novels</Link>
-            <Link to="/library">Biblioteca</Link>
+            <NavLink to="/" isActive={pathname == '/'}>Home</NavLink>
+            <NavLink to="/novels" isActive={pathname == '/novels'}>Novels</NavLink>
+            <NavLink to="/library" isActive={pathname == '/library'}>Biblioteca</NavLink>
           </Styles.NavLinksContainer>
 
           <Styles.SearchInputContainer>

@@ -39,33 +39,6 @@ export const NavLinksContainer = styled.div`
   align-items: center;
   height: 100%;
   gap: 4rem;
-
-  & a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    height: 100%;
-    font-size: 1.8rem;
-    color: white;
-    transition: color .2s;
-
-    &:hover {
-      color: var(--gray-300);
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 0.5rem;
-      border-radius: 10rem 10rem 0 0;
-      background-color: var(--gray-900);
-    }
-  }
 `;
 
 export const SearchInputContainer = styled.div`

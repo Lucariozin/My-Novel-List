@@ -1,11 +1,25 @@
 import * as Styles from './styles';
 
-import { useRef, LegacyRef } from 'react';
+import { useRef, LegacyRef, useEffect, useState } from 'react';
 
 import { NovelItem } from '../NovelItem';
 import { ChevronForwardOutline, ChevronBackOutline } from 'react-ionicons';
+import { api } from '../../services/api';
+
+type NovelData = {
+  id: number;
+  name: string;
+  volume: number;
+  author: string;
+  cover: string;
+  sinopse: string;
+  genres: string[];
+  stars: number;
+};
 
 export function MostPopularList() {
+  const [popularNovels, setPopularNovels] = useState<NovelData[]>([]);
+
   const scrollRef = useRef();
 
   function handlePreviousScroll() {
@@ -22,6 +36,10 @@ export function MostPopularList() {
     scroll.scrollBy((window.screen.width / 1.5), 0);
   }
 
+  useEffect(() => {
+    api.get('/api.json').then((response) => setPopularNovels(response.data.slice(0, 10)));
+  }, []);
+
   return (
     <Styles.Container>
       <Styles.Title>Novels Mais Populares</Styles.Title>
@@ -32,28 +50,11 @@ export function MostPopularList() {
 
       <div ref={scrollRef as unknown as LegacyRef<HTMLDivElement> | undefined}>
         <Styles.List>
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
-          <NovelItem />
+          
+          {popularNovels.map((novelData) => (
+            <NovelItem cover={novelData.cover} stars={novelData.stars} key={novelData.id} />
+          ))}
+
         </Styles.List>
       </div>
 
