@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { NavLink } from '../NavLink';
 import { SearchOutline } from 'react-ionicons';
+import { SearchInput } from '../SearchInput';
 
 export function Header() {
   const { pathname } = useLocation();
@@ -20,16 +21,8 @@ export function Header() {
             <NavLink to="/novels" isActive={pathname == '/novels'}>Novels</NavLink>
             <NavLink to="/mylist" isActive={pathname == '/mylist'}>My List</NavLink>
           </Styles.NavLinksContainer>
-
-          <Styles.SearchInputContainer>
-            <Styles.SearchInput type="text" placeholder="Faça sua busca" />
-
-            <Styles.Spacing />
-
-            <Styles.SearchButton type="button">
-              <SearchOutline color="#646464" />
-            </Styles.SearchButton>
-          </Styles.SearchInputContainer>
+          
+          <SearchInput type="text" placeholder="Faça sua busca" />
 
           <Styles.UserImgContainer>
             <Styles.UserImg

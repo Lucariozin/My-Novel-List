@@ -5,6 +5,7 @@ import { NovelItem } from '../components/NovelItem';
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import { FilterItem } from '../components/FilterItem';
+import { SearchInput } from '../components/SearchInput';
 
 type NovelData = {
   id: number;
@@ -28,15 +29,8 @@ export default function Novels() {
     <Styles.Container>
       <Styles.Wrapper>
         <Styles.SearchContainer>
-          <Styles.SearchInputContainer>
-            <Styles.SearchInput type="text" placeholder="Faça sua busca" />
-
-            <Styles.Spacing />
-
-            <Styles.SearchButton type="button">
-              <SearchOutline color="#646464" width="35px" height="35px" />
-            </Styles.SearchButton>
-          </Styles.SearchInputContainer>
+          
+          <SearchInput inputSize="large" type="text" placeholder="Faça sua busca" />
 
           <Styles.GenresContainer>
 
