@@ -18,7 +18,7 @@ export function Header() {
           <Styles.NavLinksContainer>
             <NavLink to="/" isActive={pathname == '/'}>Home</NavLink>
             <NavLink to="/novels" isActive={pathname == '/novels'}>Novels</NavLink>
-            <NavLink to="/library" isActive={pathname == '/library'}>Biblioteca</NavLink>
+            <NavLink to="/mylist" isActive={pathname == '/mylist'}>My List</NavLink>
           </Styles.NavLinksContainer>
 
           <Styles.SearchInputContainer>

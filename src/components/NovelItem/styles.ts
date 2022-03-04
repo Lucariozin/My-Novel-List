@@ -31,8 +31,8 @@ export const StarsContainer = styled.span`
   color: var(--brown-700);
   position: absolute;
   z-index: 2;
-  margin-top: 1rem;
-  margin-left: 1rem;
+  margin-top: 0.7rem;
+  margin-left: 0.7rem;
 `;
 
 export const StarImg = styled.img`

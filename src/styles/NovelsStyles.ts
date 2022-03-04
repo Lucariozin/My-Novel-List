@@ -65,26 +65,6 @@ export const GenresContainer = styled.div`
   margin-top: 5rem;
 `;
 
-export const GenreItem = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 15rem;
-  height: 5rem;
-  border: none;
-  cursor: pointer;
-  border-radius: 1.5rem;
-  font-size: 2rem;
-  background-color: var(--gray-900);
-  color: var(--gray-50);
-  transition: filter .3s ease;
-  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.5);
-
-  &:hover {
-    filter: brightness(0.8);
-  }
-`;
-
 export const Line = styled.span`
   display: block;
   width: 100%;

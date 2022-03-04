@@ -4,6 +4,7 @@ import { SearchOutline } from 'react-ionicons';
 import { NovelItem } from '../components/NovelItem';
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
+import { FilterItem } from '../components/FilterItem';
 
 type NovelData = {
   id: number;
@@ -39,16 +40,16 @@ export default function Novels() {
 
           <Styles.GenresContainer>
 
-            <Styles.GenreItem>Ação</Styles.GenreItem>
-            <Styles.GenreItem>Aventura</Styles.GenreItem>
-            <Styles.GenreItem>Romance</Styles.GenreItem>
-            <Styles.GenreItem>Comédia</Styles.GenreItem>
-            <Styles.GenreItem>Fantasia</Styles.GenreItem>
-            <Styles.GenreItem>Horror</Styles.GenreItem>
-            <Styles.GenreItem>Suspense</Styles.GenreItem>
-            <Styles.GenreItem>Mistério</Styles.GenreItem>
-            <Styles.GenreItem>Drama</Styles.GenreItem>
-            <Styles.GenreItem>Slice of Life</Styles.GenreItem>
+            <FilterItem>Ação</FilterItem>
+            <FilterItem>Aventura</FilterItem>
+            <FilterItem>Romance</FilterItem>
+            <FilterItem>Comédia</FilterItem>
+            <FilterItem>Fantasia</FilterItem>
+            <FilterItem>Horror</FilterItem>
+            <FilterItem>Suspense</FilterItem>
+            <FilterItem>Mistério</FilterItem>
+            <FilterItem>Drama</FilterItem>
+            <FilterItem>Slice of Life</FilterItem>
 
           </Styles.GenresContainer>
         </Styles.SearchContainer>

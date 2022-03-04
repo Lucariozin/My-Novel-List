@@ -5,7 +5,7 @@ export const Container = styled.header`
   height: 8rem;
   padding: 0 1rem;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   right: 0;
   backdrop-filter: blur(0.7rem) brightness(0.7);

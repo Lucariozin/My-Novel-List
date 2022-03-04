@@ -26,6 +26,8 @@ export const Title = styled.h2`
   color: var(--gray-50);
 `;
 
+export const NovelItemsListContainer = styled.div``;
+
 export const List = styled.div`
   display: flex;
   align-items: center;
